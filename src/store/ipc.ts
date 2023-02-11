@@ -32,6 +32,8 @@ export const forwardToRenderers: Middleware = (api: MiddlewareAPI) => {
   });
 
   handleOnMain('redux/action-dispatched', async (webContents, action) => {
+    console.info('render和main通信的处理：')
+    console.info(action)
     api.dispatch({
       ...action,
       ipcMeta: {

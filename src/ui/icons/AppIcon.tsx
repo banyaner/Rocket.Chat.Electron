@@ -52,4 +52,10 @@ const AppIcon: FC<AppIconProps> = ({ children, color = '#F5455C' }) => (
   </svg>
 );
 
+// const AppIcon: FC<AppIconProps> = () => {
+//   return (<div>
+//     TODO:AppIcon
+//   </div>)
+// }
+
 export default AppIcon;

@@ -28,6 +28,8 @@ export const rootWindowState: Reducer<WindowState, RootWindowStateAction> = (
 ) => {
   switch (action.type) {
     case ROOT_WINDOW_STATE_CHANGED:
+      console.info('rootWindowState.ts', action)
+
       return action.payload;
 
     case APP_SETTINGS_LOADED: {

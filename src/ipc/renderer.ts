@@ -15,6 +15,7 @@ export const handle = <N extends Channel>(
       const resolved = await handler(...(args as Parameters<Handler<N>>));
 
       ipcRenderer.send(`${channel}@${id}`, { resolved });
+      console.info('renderer.ts', channel, id)
     } catch (error) {
       error instanceof Error &&
         ipcRenderer.send(`${channel}@${id}`, {

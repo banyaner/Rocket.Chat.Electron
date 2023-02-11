@@ -164,6 +164,15 @@ const fetchRootWindowState = async (): Promise<
   ReturnType<typeof selectRootWindowState>
 > => {
   const browserWindow = await getRootWindow();
+  console.log('rootWindow.ts', {
+    focused: browserWindow && browserWindow.isFocused(),
+    visible: browserWindow && browserWindow.isVisible(),
+    maximized: browserWindow && browserWindow.isMaximized(),
+    minimized: browserWindow && browserWindow.isMinimized(),
+    fullscreen: browserWindow && browserWindow.isFullScreen(),
+    normal: browserWindow && browserWindow.isNormal(),
+    bounds: browserWindow && browserWindow.getNormalBounds(),
+  })
   return {
     focused: browserWindow && browserWindow.isFocused(),
     visible: browserWindow && browserWindow.isVisible(),

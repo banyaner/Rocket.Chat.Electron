@@ -15,7 +15,7 @@ import { GlobalStyles, Wrapper, WindowDragBar, ViewsWrapper } from './styles';
 
 export const Shell: FC = () => {
   const appPath = useSelector(({ appPath }: RootState) => appPath);
-
+  // 添加构建产物里的css样式到容器
   useLayoutEffect(() => {
     if (!appPath) {
       return undefined;
@@ -23,7 +23,7 @@ export const Shell: FC = () => {
 
     const linkElement = document.createElement('link');
     linkElement.rel = 'stylesheet';
-    linkElement.href = `${appPath}/app/icons/rocketchat.css`;
+    linkElement.href = `${appPath}/app/icons/rocketchat.css`; // 里面是字体文件
     document.head.append(linkElement);
 
     return () => {

@@ -1,3 +1,7 @@
+/* todo: 用于调试，上线时删除 */
+import installExtension, { REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+/* 调试结束*/
+
 import { app } from 'electron';
 import electronDl from 'electron-dl';
 
@@ -40,6 +44,14 @@ const start = async (): Promise<void> => {
   performElectronStartup();
 
   await app.whenReady();
+
+  /* todo: 用于调试，上线时删除 */
+  const METEOR_ID = 'ibniinmoafhgbifjojidlagmggecmpgf'
+  installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS, METEOR_ID])
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
+
+  /* 调试结束*/
 
   createMainReduxStore();
 
@@ -89,6 +101,7 @@ const start = async (): Promise<void> => {
 
   watchAndPersistChanges();
 
+  // 获取可用资源的权限等处理
   handleDesktopCapturerGetSources();
 
   await processDeepLinksInArgs();
