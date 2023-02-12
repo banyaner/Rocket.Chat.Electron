@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/rootReducer';
 import { AboutDialog } from '../AboutDialog';
 import { AddServerView } from '../AddServerView';
+import { AddressBookView } from '../AddressBookView';
 import DownloadsManagerView from '../DownloadsManagerView';
 import { ScreenSharingDialog } from '../ScreenSharingDialog';
 import { SelectClientCertificateDialog } from '../SelectClientCertificateDialog';
@@ -39,7 +40,10 @@ export const Shell: FC = () => {
         <SideBar />
         <ViewsWrapper>
           <ServersView />
+          {/* 添加服务器窗口 */}
           <AddServerView />
+          {/* 通讯录窗口 */}
+          <AddressBookView/>
           <DownloadsManagerView />
           <SettingsView />
         </ViewsWrapper>
