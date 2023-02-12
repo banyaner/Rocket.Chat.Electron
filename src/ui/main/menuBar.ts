@@ -550,7 +550,7 @@ const createWindowMenu = createSelector(
       {
         id: 'addressBook',
         label: t('menus.addressBook'),
-        checked: currentView === 'addressBook',
+        checked: currentView === 'address-book',
         accelerator: 'CommandOrControl+A', // todo:快捷键是否和别人冲突
         click: async () => {
           const browserWindow = await getRootWindow();

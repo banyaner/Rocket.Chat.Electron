@@ -81,7 +81,7 @@ export const SideBar: FC = () => {
         </SidebarActionButton>
         <SidebarActionButton
           onClick={handelAddressBookButtonClicked}
-          isSelected={currentView === 'addressBook'}
+          isSelected={currentView === 'address-book'}
         >
            {/* todo: address-book需要将"@rocket.chat/fuselage": "0.31.1"升级到0.31.22，但升级后有报错，之后可以使用本地构建版本替换。 */}
           {/* <Icon name='address-book' /> */}

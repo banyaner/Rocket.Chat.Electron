@@ -40,7 +40,7 @@ type CurrentViewState =
   | 'add-new-server'
   | 'downloads'
   | 'settings'
-  | 'addressBook'
+  | 'address-book'
   | { url: string };
 
 export const currentView = (
@@ -93,7 +93,7 @@ export const currentView = (
     case SIDE_BAR_SETTINGS_BUTTON_CLICKED:
       return 'settings';
     case SIDE_BAR_ADDRESS_BOOK_BUTTON_CLICKED:
-      return 'addressBook';
+      return 'address-book';
   }
 
   return state;
