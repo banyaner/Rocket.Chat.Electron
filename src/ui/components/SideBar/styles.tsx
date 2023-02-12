@@ -12,7 +12,8 @@ type WrapperProps = {
 };
 
 export const Wrapper = styled.div<WrapperProps>`
-  flex: 0 0 68px;
+  padding: 0 10px;
+  flex: 0 0 108px;
   align-self: stretch;
 
   display: flex;
@@ -36,7 +37,7 @@ export const Wrapper = styled.div<WrapperProps>`
 	${({ isVisible }) =>
     !isVisible &&
     css`
-      margin-inline-start: -68px;
+      margin-inline-start: -108px;
       visibility: hidden;
     `}
 `;
@@ -74,7 +75,6 @@ type ServerButtonWrapperProps = {
   isDragged: boolean;
   hasUnreadMessages: boolean;
   isSelected: boolean;
-  tooltip: string;
 };
 
 export const ServerButtonWrapper = styled.li<ServerButtonWrapperProps>`
@@ -109,21 +109,20 @@ export const ServerButtonWrapper = styled.li<ServerButtonWrapperProps>`
     background-color: #ffffff;
 
     ${({ hasUnreadMessages }) =>
-      hasUnreadMessages &&
-      css`
+    hasUnreadMessages &&
+    css`
         height: 6px;
         opacity: 0.6;
       `}
 
     ${({ isSelected }) =>
-      isSelected &&
-      css`
+    isSelected &&
+    css`
         height: 30px;
         opacity: 1;
       `}
   }
 
-  ${withTooltip}
 `;
 
 type KeyboardShortcutProps = {
@@ -189,7 +188,7 @@ export const Avatar = styled.span<AvatarProps>`
 
   &:hover {
     ${({ isSelected }) =>
-      css`
+    css`
         opacity: ${isSelected ? '1' : '0.8'};
       `}
   }
@@ -255,16 +254,26 @@ export const AddServerButtonLabel = styled.span<AddServerButtonLabelProps>`
 
 type SidebarActionButtonProps = {
   isSelected?: boolean;
-  tooltip: string;
+  text?: string;
+  hasUnreadMessages?: boolean;
 };
 
-export const SidebarActionButton = styled.span<SidebarActionButtonProps>`
+type SidebarActionButtonLabelProps = {
+  text?: string;
+};
+
+export const SidebarActionButtonLabel = styled.span<SidebarActionButtonLabelProps>`
+  padding-left: 4px;  
+  font-size: 18px;
+`;
+
+export const SidebarActionButton = styled.div<SidebarActionButtonProps>`
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  width: 40px;
   height: 40px;
-  line-height: 30px;
+  font-size: 24px;
   transition: opacity var(--transitions-duration);
   opacity: 0.6;
   color: inherit;
@@ -277,11 +286,15 @@ export const SidebarActionButton = styled.span<SidebarActionButtonProps>`
       opacity: 1;
     `}
 
+  ${({ hasUnreadMessages }) =>
+    hasUnreadMessages &&
+    css`
+      opacity: 0.6;
+  `}
+
   &:hover {
     opacity: 1;
   }
-
-  ${withTooltip}
 `;
 
 export const BottomButtons = styled.div`

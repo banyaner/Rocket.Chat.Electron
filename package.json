@@ -8,7 +8,7 @@
   "version": "3.8.19",
   "author": "Rocket.Chat Support <support@rocket.chat>",
   "copyright": "© 2016-2021, Rocket.Chat",
-  "homepage": "https://rocket.chat",
+  "homepage": "",
   "license": "MIT",
   "keywords": [
     "rocketchat",
@@ -17,10 +17,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RocketChat/Rocket.Chat.Electron.git"
+    "url": "git+https://github.com/banyaner/Rocket.Chat.Electron.git"
   },
   "bugs": {
-    "url": "https://github.com/RocketChat/Rocket.Chat.Electron/issues"
+    "url": "https://github.com/banyaner/Rocket.Chat.Electron.git"
   },
   "main": "app/main.js",
   "scripts": {
@@ -132,5 +132,5 @@
     "node": ">=12.8.x",
     "yarn": ">=1.22.x"
   },
-  "productName": "Rocket.Chat"
+  "productName": "IM"
 }

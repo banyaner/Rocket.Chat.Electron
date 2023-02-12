@@ -279,6 +279,8 @@
     "addNewServer": "Add new server",
     "downloads": "Downloads",
     "settings": "Settings",
+    "messages": "Messages",
+    "addressBook": "Address Book",
     "item": {
       "reload": "Reload server",
       "remove": "Remove server",

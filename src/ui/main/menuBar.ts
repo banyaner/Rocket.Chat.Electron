@@ -22,6 +22,7 @@ import {
   MENU_BAR_TOGGLE_IS_TRAY_ICON_ENABLED_CLICKED,
   SIDE_BAR_DOWNLOADS_BUTTON_CLICKED,
   SIDE_BAR_SETTINGS_BUTTON_CLICKED,
+  SIDE_BAR_ADDRESS_BOOK_BUTTON_CLICKED,
 } from '../actions';
 import { askForAppDataReset } from './dialogs';
 import { getRootWindow } from './rootWindow';
@@ -544,6 +545,21 @@ const createWindowMenu = createSelector(
           }
           browserWindow.focus();
           dispatch({ type: SIDE_BAR_DOWNLOADS_BUTTON_CLICKED });
+        },
+      },
+      {
+        id: 'addressBook',
+        label: t('menus.addressBook'),
+        checked: currentView === 'addressBook',
+        accelerator: 'CommandOrControl+A', // todo:快捷键是否和别人冲突
+        click: async () => {
+          const browserWindow = await getRootWindow();
+
+          if (!browserWindow.isVisible()) {
+            browserWindow.showInactive();
+          }
+          browserWindow.focus();
+          dispatch({ type: SIDE_BAR_ADDRESS_BOOK_BUTTON_CLICKED });
         },
       },
       {

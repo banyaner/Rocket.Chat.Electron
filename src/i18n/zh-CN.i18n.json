@@ -196,6 +196,8 @@
     "addNewServer": "新增服务器",
     "downloads": "下载",
     "settings": "设置",
+    "messages": "消息",
+    "addressBook": "通讯录",
     "item": {
       "reload": "重新载入服务器",
       "remove": "移除服务器",
