@@ -35,7 +35,6 @@ const ServerButton: FC<ServerButtonProps> = ({
   const handleServerClick = (): void => {
     dispatch({ type: SIDE_BAR_SERVER_SELECTED, payload: url });
   };
-  console.log(999, isSelected)
 
   return (
     <SidebarActionButton
