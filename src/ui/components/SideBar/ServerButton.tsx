@@ -18,7 +18,6 @@ type ServerButtonProps = {
   url: string;
   isSelected: boolean;
   userLoggedIn?: boolean;
-  isShortcutVisible: boolean;
   hasUnreadMessages: boolean;
   mentionCount?: number;
 };
@@ -27,7 +26,6 @@ type ServerButtonProps = {
 const ServerButton: FC<ServerButtonProps> = ({
   url,
   isSelected,
-  hasUnreadMessages,
   mentionCount,
   userLoggedIn,
 }) => {
@@ -37,12 +35,11 @@ const ServerButton: FC<ServerButtonProps> = ({
   const handleServerClick = (): void => {
     dispatch({ type: SIDE_BAR_SERVER_SELECTED, payload: url });
   };
-
+  console.log(999, isSelected)
 
   return (
     <SidebarActionButton
       isSelected={isSelected}
-      hasUnreadMessages={hasUnreadMessages}
       onClick={handleServerClick}
     >
       <Icon name="balloon-ellipsis"/>

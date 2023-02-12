@@ -19,7 +19,6 @@ import {
   SidebarActionButton,
   SidebarActionButtonLabel,
 } from './styles';
-import { useKeyboardShortcuts } from './useKeyboardShortcuts';
 import { useSorting } from './useSorting';
 
 export const SideBar: FC = () => {
@@ -28,7 +27,6 @@ export const SideBar: FC = () => {
     () => servers.find(({ selected }) => selected)?.style || {},
     [servers]
   );
-  const isEachShortcutVisible = useKeyboardShortcuts();
   const {
     sortedServers,
   } = useSorting(servers);
@@ -56,13 +54,12 @@ export const SideBar: FC = () => {
           <ServerButton
             key={server.url}
             url={server.url}
-            isSelected={server.selected}
+            isSelected={typeof currentView === 'object'}
             hasUnreadMessages={!!server.badge}
             userLoggedIn={server.userLoggedIn}
             mentionCount={
               typeof server.badge === 'number' ? server.badge : undefined
             }
-            isShortcutVisible={isEachShortcutVisible}
           />
         ))}
         <SidebarActionButton
